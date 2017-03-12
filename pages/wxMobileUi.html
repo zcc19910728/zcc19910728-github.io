@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <!--   <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    -->
+    <link rel="stylesheet" type="text/css" href="../stylesheets/common.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/index.css" media="screen">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>mobile ui css</title>
+    <style type="text/css">
+        .header{position: static;}
+        .main-content{padding-top:0px;}
+    </style>
+</head>
+
+<body>
+    <div id="container" data-iscroll="true">
+        <header id="header">
+            <!--  <div class="clearfix bg-b cor-w header">
+            <h1 class="f-l fs-14 fw-b ml-20 pt-5">
+                <img src="../images/logo.png" />
+            </h1>
+            <ul class="f-r fs-14 pt-20 pb-20">
+                <li class="f-l">
+                    <a class="cor-w mr-20">html</a>
+                </li>
+                <li class="f-l">
+                    <a class="cor-w mr-20">css</a>
+                </li>
+                <li class="f-l">
+                    <a class="cor-w  mr-20">javascript</a>
+                </li>
+                <li class="f-l">
+                    <a class="cor-w mr-20">project</a>
+                </li>
+            </ul>
+        </div>
+        -->
+    </header>
+
+    <section class="main-content">
+        
+         <div class="side-bar" id="sideBar">
+            <div class="sub-menu active"><a class="cur-p" href="#wxBotton">微信按钮</a></div>
+            <div class="sub-menu"><a class="cur-p" href="#wxColorHtml">微信字体背景颜色</a></div>
+            <div class="sub-menu"><a class="cur-p" href="#wxForm">表单样式</a></div>
+            <div class="sub-menu"><a class="cur-p" href="#wxtabs">微信tab样式</a></div>
+            <div class="sub-menu"><a class="cur-p" href="#wxNoResult">无数据提示</a></div>
+            <div class="sub-menu"><a class="cur-p" href="#wxsearchbar">搜索栏</a></div>
+            <div class="sub-menu"><a class="cur-p" href="#wxGoodsList">商品块</a></div>
+            <div class="sub-menu"><a class="cur-p" href="#wxvalidateForm">表单验证</a></div>
+            <div class="sub-menu"><a class="cur-p" href="#wxDialog">对话框</a></div>
+            <div class="sub-menu"><a class="cur-p" href="#mallBotton">微商城样式</a></div>
+        </div>
+        <div class="main-container" id="mainContainer" style="padding-bottom:300px;">
+            <div class="component-block" id="wxBotton">
+                <div class="component-title" >微信按钮</div>
+                <div class="component-example">
+                    <pre>
+                    <code class="language-html" data-lang="html">
+                    &lt;p&gt;&lt;a class="button"&gt;红色基础&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="button button-red"&gt;红色小&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="button button-grey "&gt;灰色小&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="button button-red-lg"&gt;红色大&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="button button-green-lg"&gt;绿色大&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="button button-grey-lg"&gt;灰色大&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn-line"&gt;红线按钮&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn-line btn-line-green"&gt;绿线按钮&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn-line btn-line-grey"&gt;灰线按钮&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn-line-lg"&gt;大红线&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn-line-lg btn-line-lg-grey"&gt;大灰线&lt;/a&gt;&lt;/p&gt;
+                    &lt;div class="wx-bottom-fix"&gt;
+                        &lt;a class="btn"&gt;底部红&lt;/a&gt;
+                        &lt;a class="btn btn-grey"&gt;底部灰&lt;/a&gt;
+                        &lt;a class="btn btn-disabed"&gt;底部禁用&lt;/a&gt;
+                    &lt;/div&gt;
+                    </code>
+                </pre>
+
+                </div>
+                
+            </div>
+            <div class="component-block" id="wxColorHtml">
+                <div class="component-title" >微信字体背景颜色</div>
+                <div class="component-example">
+                <pre> 
+                <code class="language-html" data-lang="html">
+                &lt;p&gt;&lt;a class="cor-red"&gt;红色--字&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a class="cor-green"&gt;绿色--字&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a class="cor-grey1"&gt;灰色1--字&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a class="cor-grey2"&gt;灰色2--字&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a class="cor-grey3"&gt;灰色3--字&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a class="cor-grey4"&gt;灰色4--字&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a class="cor-w"&gt;白色--字&lt;/a&gt;&lt;/p&gt;
+                &lt;p class="bg-e"&gt;灰色背景&lt;/p&gt;
+                &lt;p class="bg-fa"&gt;淡灰色背景&lt;/p&gt;
+                &lt;p class="bg-w"&gt;白色背景&lt;/p&gt;
+                &lt;p class="bg-red"&gt;红色背景&lt;/p&gt;
+                &lt;p class="bg-green"&gt;绿色背景&lt;/p&gt;
+                &lt;p class="bg-b"&gt;黑色背景&lt;/p&gt;
+                </code>
+                </pre>
+                </div>
+            </div>
+
+            <div class="component-block" id="wxForm">
+                <div class="component-title" >表单样式</div>
+                <div class="cor-red pl-20">注：input框清除内容已包含在内，由于字体原因未加载</div>
+                <div class="component-example">
+                <pre> 
+                <code class="language-html" data-lang="html">
+                &lt;ul class="wx-form-ul"&gt;
+                    &lt;li class="form-row"&gt;
+                        &lt;label class="form-label"&gt;客服电话&lt;/label&gt;
+                        &lt;div class="form-item"&gt;
+                            &lt;input  name="phone" id="phone" type="text" class="ipt" placeholder="请输入客服电话" maxlength="11" /&gt;
+                            &lt;i class="iconfont clear-icon"&gt;&#xe60d;&lt;/i&gt;
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;li class="form-row"&gt;
+                        &lt;label class="form-label"&gt;下拉框&lt;/label&gt;
+                        &lt;div class="form-item"&gt;
+                            &lt;div class="w-60 select-noborder-box"&gt;
+                                &lt;div class="jt"&gt;&lt;/div&gt;
+                                &lt;select name="province" id="province" &gt;
+                                    &lt;option value="0"&gt;请选择省&lt;/option&gt;
+                                    &lt;option value="1"&gt;北京&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;li class="form-row"&gt;
+                        &lt;div class="form-item no-label city-select-wrap clearfix" id="selectWrap"&gt;
+                                &lt;div class="select-box w-333 select-noborder-box"&gt;
+                                    &lt;div class="jt"&gt;&lt;/div&gt;
+                                    &lt;select name="province" id="province" style="width: 82%"&gt;
+                                        &lt;option value="0"&gt;请选择省&lt;/option&gt;
+                                        &lt;option value="1"&gt;北京&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="select-box w-333 select-noborder-box"&gt;
+                                    &lt;div class="jt"&gt;&lt;/div&gt;
+                                    &lt;select name="city" id="city" style="width: 82%"&gt;
+                                        &lt;option value="0"&gt;请选择市&lt;/option&gt;
+                                        &lt;option value="1"&gt;北京&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="select-box w-333 select-noborder-box"&gt;
+                                    &lt;div class="jt"&gt;&lt;/div&gt;
+                                    &lt;select name="area" id="area" style="width: 82%"&gt;
+                                        &lt;option value="0"&gt;请选择区/县&lt;/option&gt;
+                                        &lt;option value="1"&gt;北京&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;li class="form-row"&gt;
+                        &lt;label class="form-label"&gt;备注&lt;/label&gt;
+                        &lt;div class="form-item"&gt;
+                            &lt;textarea rows="3" class="ipt"&gt;&lt;/textarea&gt;
+                            &lt;i class="iconfont clear-icon"&gt;&#xe60d;&lt;/i&gt;
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;li class="ta-r pr-20 mt-30"&gt;
+                        &lt;a class="button button-red-lg" &gt;保存&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                </code>
+                </pre>
+                </div>
+            </div>
+            <div class="component-block" id="wxtabs">
+                <div class="component-title" >微信tab样式</div>
+                <div class="component-example">
+                <pre> 
+                <code class="language-html" data-lang="html">
+                &lt;ul class="clearfix wx-tabs" id="wxTabs"&gt;
+                    &lt;li class="w-333 active" &gt;拼团中&lt;/li&gt;
+                    &lt;li class="w-333" &gt;拼团成功&lt;/li&gt;
+                    &lt;li class="w-333" &gt;拼团失败&lt;/li&gt;
+                &lt;/ul&gt;
+                </code>
+                </pre>
+                </div>
+            </div>
+
+            <div class="component-block" id="wxNoResult">
+                <div class="component-title" >无数据提示</div>
+                <div class="pl-20">
+                    订单相关图片为：empty-order.png</br>
+                    商品相关图片为：empty-goods.png</br>
+                    金钱相关图片为：empty-account.png</br>
+                    活动相关图片为：empty-activity.png
+                </div>
+                <div class="component-example">
+                <pre> 
+                <code class="language-html" data-lang="html">
+                &lt;div class="empty-wrap"&gt;
+                    &lt;img src="/images/weixin/empty-order.png" class="empty-img" /&gt;
+                    &lt;div class="empty-tips"&gt;&lt;span class="fs-14"&gt;您还没有订单,快去买买买...&lt;/span&gt;&lt;/div&gt;
+                    &lt;div class="ta-c"&gt;
+                        &lt;a class="btn-line" href="XXXX"&gt;去逛逛&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+                </div>
+            </div>
+
+            <div class="component-block" id="wxsearchbar">
+                <div class="component-title" >搜索栏</div>
+                <div class="cor-red pl-20">注：由于字体原因未加载，icon暂时未展示出来</div>
+                <div class="component-example">
+                <pre> 
+                <code class="language-html" data-lang="html">
+                &lt;div class="search-bar" id="searchBar"&gt;
+                    &lt;div class="searchbar-wrap"&gt;  
+                        &lt;div class="search-inner"&gt;
+                            &lt;i class="iconfont back-icon"&gt;&#xe62a;&lt;/i&gt;
+                            &lt;span class="search-btn" id="searchBtn"&gt;搜索&lt;/span&gt;
+                            &lt;div class="search-ipt"  &gt;
+                                &lt;i class="iconfont search-icon" id="searchIconBtn"&gt;&#xe611;&lt;/i&gt;
+                                &lt;input type="search" name="itemName" id="itemName" placeholder="奶粉" class="ipt J-search-ipt"  /&gt;
+                                &lt;i class="iconfont clear-icon" &gt;&#xe60d;&lt;/i&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+
+                &lt;div class='search-keyword' id="keywordLayer"&gt;
+                    历史记录代码
+                &lt;/div&gt;
+                </code>
+                </pre>
+                </div>
+            </div>
+
+            <div class="component-block" id="wxGoodsList">
+                <div class="component-title" >商品块</div>
+                <div class="component-example">
+                <pre> 
+                <code class="language-html" data-lang="html">
+                &lt;div class="goods-info-wrap bg-w"&gt;
+                    &lt;div class="img-wrap clearfix"&gt;
+                        &lt;img src="http://staticonline.hipac.cn/item/201601/01051443440472.jpg@200w.webp" class="w-100 f-l" /&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="info-wrap"&gt;
+                        &lt;div class="title"&gt;
+                            英国牛栏商品有图有真相
+                        &lt;/div&gt;
+
+                        &lt;div class="fs-12 cor-grey3 mt-10"&gt;
+                            库存：0
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                </code>
+                </pre>
+                </div>
+            </div>
+
+            <!--start:form validate-->
+            <div class="component-block" id="wxvalidateForm">
+                <div class="component-title" >表单验证</div>
+                <div class="cor-red pl-20">注：使用validate属性来验证，可使用form.serialize()的方法提交表单</div>
+                <div class="component-example">
+                <pre> 
+                <code class="language-html" data-lang="html">
+                &lt;form id="addOrderForm" &gt;
+                    &lt;div class=" mb-20 mt-20 ml-20"&gt;
+                        &lt;div class="fs-14"&gt;表单验证&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;ul class="wx-form-ul"&gt;
+                        &lt;li class="form-row"&gt;
+                            &lt;div class="form-item no-label"&gt;
+                                &lt;input type="text" name="deliveryPhone" id="deliveryPhone"  data-old="$!{prevOrderVo.receivePhone}"
+                                       placeholder="手机号（必填）" validate="{required:'请输入手机号',phone:'手机号有误'}" maxlength="11"
+                                       class="ipt"/&gt;
+                                &lt;i class="iconfont clear-icon"&gt;&#xe60d;&lt;/i&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li class="form-row"&gt;
+                            &lt;div class="form-item no-label"&gt;
+                                &lt;input type="text" name="deliveryName" id="deliveryName" 
+                                       validate="{required:'请输入收货姓名',name:'请输入正确的收货姓名'}" placeholder="收货姓名(必填,必须与身份证号对应)"
+                                       class="ipt"/&gt;
+                                &lt;i class="iconfont clear-icon"&gt;&#xe60d;&lt;/i&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                
+                        &lt;li class="form-row"&gt;
+                            &lt;div class="form-item no-label"&gt;
+                                &lt;input type="text" name="custIdNum" id="custIdNum" data-old="$!{prevOrderVo.custIdNum}"
+                                       validate="{required:'请输入身份证',cardNo:'请填写正确的身份证号码'}" placeholder="身份证号码（必填）"
+                                       class="ipt"/&gt;
+                                &lt;i class="iconfont clear-icon"&gt;&#xe60d;&lt;/i&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+             
+                        &lt;li class="form-row"&gt;
+                            &lt;div class="form-item no-label"&gt;
+                                &lt;textarea name="addressDetail" id="addressDetail" validate="{required:'请输入收货地址',deliveryAddress:'收货地址'}" placeholder="收货地址(必填)"
+                                          class="ipt"&gt;&lt;/textarea&gt;
+                                &lt;i class="iconfont clear-icon"&gt;&#xe60d;&lt;/i&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;li class="ta-r pr-20 mt-30"&gt;
+                        &lt;div class="button button-red-lg" id="submitOrder"&gt;
+                            立即支付
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                &lt;/form&gt;
+                &lt;script&gt;
+                    $('#submitOrder').on('click', function(){
+                        if(!$('#addOrderForm').validateForm()){
+                            return false;
+                        }
+                    });
+                &lt;/script&gt;
+                </code>
+                </pre>
+                </div>
+            </div><!--start:form validate-->
+
+            <div class="component-block" id="wxDialog">
+                <div class="component-title" >对话框</div>
+                <div class="component-example">
+                <pre> 
+                <code class="language-html" data-lang="html">
+                &lt;p&gt;&lt;a id="toastBtn" class="button button-red-lg"&gt;普通提示框&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a id="alertBtn" class="button button-red-lg"&gt;alert提示框&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a id="confirmBtn" class="button button-red-lg"&gt;confirm提示框&lt;/a&gt;&lt;/p&gt;
+                &lt;div id="tips" class="cor-red pl-20"&gt;&lt;/div&gt;
+                &lt;script type="text/javascript"&gt;
+                    $(function(){
+                        $('#toastBtn').click(function(){
+                            Yt.toast('普通提示框', 3000, function(){
+                                $('#tips').text('普通提示框');
+                            });
+                        });
+
+                        $('#alertBtn').click(function(){
+                            Yt.alert('我是alert提示框', function(){
+                                $('#tips').text('alert提示框');
+                            });
+                        });
+
+                        $('#confirmBtn').click(function(){
+                            Yt.confirm('我是alert提示框', function(){
+                                $('#tips').text('confirm提示框');
+                                Yt.dialogClose("ytDialog");
+                            });
+                        });
+                    });
+                &lt;/script&gt;
+                </code>
+                </pre>
+                </div>
+            </div>
+
+            <div class="component-block" id="mallBotton">
+                <div class="component-title" >微商城样式</div>
+                <div class="component-example">
+                <pre> 
+                <code class="language-html" data-lang="html">
+                    &lt;p&gt;&lt;p&gt;&lt;a class="btnm btnm-grey"&gt;灰色&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn-l btn-l-red "&gt;红色大&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn-l btn-l-grey"&gt;灰色大&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="cor-mred"&gt;红色--字&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="cor-mgreen"&gt;绿色--字&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="cor-mgrey1"&gt;灰色1--字&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="cor-mgrey2"&gt;灰色2--字&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="cor-mgrey3"&gt;灰色3--字&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="cor-mgrey4"&gt;灰色4--字&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="cor-w"&gt;白色--字&lt;/a&gt;&lt;/p&gt;
+                    &lt;div class="bg-mred"&gt;红色背景&lt;/div&gt;      
+                    &lt;div class="mall-bottom-fix pt-10"&gt;
+                        &lt;a class="btnm"&gt;底部红&lt;/a&gt;
+                        &lt;a class="btnm btnm-grey"&gt;底部灰&lt;/a&gt;
+                    &lt;/div&gt;
+                </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-bar">
+            <div class="mobile-bg">
+                <iframe src="mobileInnerIframe.html" id="innerIframe" name="innerIframe" width="377" align="center" height="667" frameborder="no" border="0" ></iframe>
+             </div>
+        </div>
+       
+    </section>
+
+    <footer></footer>
+
+</div>
+<script type="text/javascript" src="../javascripts/jquery.js"></script>
+<script type="text/javascript" src="../javascripts/main.js"></script>
+</body>
+</html>

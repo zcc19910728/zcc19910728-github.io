@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/ytcommon.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/index.css" media="screen">
+    <title>新增修改类型</title>
+  </head>
+
+  <body>
+    <div id="container">
+        <header id="header">
+          <!--  <div class="clearfix bg-b cor-w header">
+                <h1 class="f-l fs-14 fw-b ml-20 pt-5"><img src="../images/logo.png" /></h1>
+                <ul class="f-r fs-14 pt-20 pb-20">
+                    <li class="f-l"><a class="cor-w mr-20">html</a></li>
+                    <li class="f-l"><a class="cor-w mr-20">css</a></li>
+                    <li class="f-l"><a class="cor-w  mr-20">javascript</a></li>
+                    <li class="f-l"><a class="cor-w mr-20">project</a></li>
+                </ul>
+            </div> -->
+        </header>
+
+        <section class="main-content bg-w">
+            <div class="layer-main">
+               <form id="configForm" >
+			        <div class="form-wrap">
+			            <div class="form-title">
+			                配置基本信息
+			            </div>
+			            <ul class="form-body">
+			                <li>
+			                    <div class="form-label">配置KEY：</div>
+			                    <div class="form-col">
+			                        <input type="text" class="ipt required" id="configName" name="configName" />
+			                    </div>
+			                </li>
+			                <li>
+			                    <div class="form-label">配置Value：</div>
+			                    <div class="form-col">
+			                        <textarea name="configValue" rows="4" cols="40" class="required"></textarea>
+			                    </div>
+			                </li>
+			                <li class="form-row">
+			                	<div class="form-cell">
+			                		<div class="form-label">配置类型：</div>
+				                    <div class="form-col">
+				                        <input type="text" class="ipt required" name="configType" />
+				                    </div>
+			                	</div>
+			                	<div class="form-cell">
+			                		 <div class="form-label">配置所属人：</div>
+				                    <div class="form-col">
+				                        <input type="text" name="configUser" id="configUser"  class="ipt" />
+				                    </div>
+			                	</div>
+			                </li>
+			                <li>
+			                    <div class="form-label">是否KEY唯一：</div>
+			                    <div class="form-col pt-10">
+			                        <input type="radio" name="isPrivate" value="0" onchange="changePrivate(true)"/>是
+			                        <input type="radio" name="isPrivate" value="1" checked  class="ml-10" onchange="changePrivate(false)"/>否
+			                    </div>
+			                </li>
+			                <li>
+			                    <div class="form-label">配置所属角色：</div>
+			                    <div class="form-col">
+			                        <select name="configRole" id="configRole" class="select">
+			                            <option value="">--请选择角色--</option>
+			                            <option value="1">角色1</option>
+			                        </select>
+			                    </div>
+			                </li>
+			                <li>
+			                    <div class="form-label"></div>
+			                    <div class="form-col">
+			                        <a class="btn" id="saveBtn">保&nbsp;&nbsp;存</a>
+			                        <a class="btn btn-secondary" id="cancleBtn">取&nbsp;&nbsp;消</a>
+			                    </div>
+
+			                </li>
+			            </ul>
+			        </div>
+			    </form>
+
+				<div class="tabs-wrap mt-40">
+					<ul class="tabs" id="tabsUl">
+						<li class="active" data-for="htmlCodeWrap">html代码</li>
+						<li data-for="jsCodeWrap">js代码</li>
+					</ul>
+				</div>
+				
+				<div class="code-wrap">
+				<div class="bg-w pb-40" id="htmlCodeWrap">
+				
+<xmp>
+#set($mainMenu="operation")
+#set($title="查看进度")
+#set($menu="fundSerial")
+#parse("./hipac/common/header.vm")
+<link rel="stylesheet" href="${cssPath}/lib/My97DatePicker/skin/WdatePicker.css?t=$version" type="text/css" />
+<link href="${cssPath}/lib/select2/select2.min.css" rel="stylesheet" type="text/css" />
+<div class="main">
+	<div class="bg-e p-10 breadcrumb">
+		#genrateBreadcrumbs([{"name":"运营管理"}, {"name":"照片核销"},{"name":"查看进度"}])
+	</div>
+	<div id="mainWrap">
+		<form id="configForm" >
+			<div class="form-wrap">
+				<div class="form-title">
+					配置基本信息
+				</div>
+				<ul class="form-body">
+					<li>
+						<div class="form-label">配置KEY：</div>
+						<div class="form-col">
+							<input type="text" class="ipt required" id="configName" name="configName" />
+						</div>
+					</li>
+					<li>
+						<div class="form-label">配置Value：</div>
+						<div class="form-col">
+							<textarea name="configValue" rows="4" cols="40" class="required"></textarea>
+						</div>
+					</li>
+					<li class="form-row">
+						<div class="form-cell">
+							<div class="form-label">配置类型：</div>
+							<div class="form-col">
+								<input type="text" class="ipt required" name="configType" />
+							</div>
+						</div>
+						<div class="form-cell">
+							<div class="form-label">配置所属人：</div>
+							<div class="form-col">
+								<input type="text" name="configUser" id="configUser"  class="ipt" />
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="form-label">是否KEY唯一：</div>
+						<div class="form-col pt-10">
+							<input type="radio" name="isPrivate" value="0" onchange="changePrivate(true)"/>是
+							<input type="radio" name="isPrivate" value="1" checked  class="ml-10" onchange="changePrivate(false)"/>否
+						</div>
+					</li>
+					<li>
+						<div class="form-label">配置所属角色：</div>
+						<div class="form-col">
+							<select name="configRole" id="configRole" class="select">
+								<option value="">--请选择角色--</option>
+								<option value="1">角色1</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<div class="form-label"></div>
+						<div class="form-col">
+							<a class="btn" id="saveBtn">保&nbsp;&nbsp;存</a>
+							<a class="btn btn-secondary" id="cancleBtn">取&nbsp;&nbsp;消</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div>
+#parse("./hipac/common/footer.vm")
+<script src="${base}/res/thirdparty/validate/jquery.validate.min.js" type="text/javascript"></script>
+<script src="${jsPath}/lib/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="${jsPath}/lib/My97DatePicker/lang/zh-cn.js" type="text/javascript"></script>
+<script src="${jsPath}/lib/select2/select2.min.js" type="text/javascript"></script>
+<script src="${jsPath}/js/manager/brandtask/brandTaskShopList.js?v=$version" type="text/javascript"></script>		
+</xmp>
+				</div>
+				
+				<div class="bg-w pb-40 d-n" id="jsCodeWrap">
+				
+<xmp>
+	
+	$(function () {
+	    var list = {
+	        initPage: function(){
+	            this.bindEvent();
+	        },
+
+	        bindEvent: function(){
+	            $('#cancleBtn').on('click', function(){
+	                alert('取消');
+	            });
+
+	            $('#saveBtn').on('click', function(){
+	                var configForm = $("#configForm");
+	                if (!configForm.validate().form()) {
+	                    return false;
+	                }
+
+	                Yt.post('save.json', configForm.serialize(), function(){
+	                    Yt.tips("提交成功...");
+	                    window.location.href = "/admin/core/config/list.do";
+	                });
+
+	            });
+	        }
+	    };
+
+	    list.initPage();
+
+	});
+</xmp>
+				</div>
+				</div>
+				
+				
+
+
+            </div>
+
+
+
+            <div class="layer-side">
+            	<div class="ml-10 cor-grey6 fs-14 pt-10"><a href="demoList.html">list列表页</a></div>
+            	<div class="ml-10 cor-grey6 fs-14 pt-10"><a href="demoAdd.html">新增表单页</a></div>
+            	<div class="ml-10 cor-grey6 fs-14 pt-10"><a href="demoDetail.html">详情页</a></div>
+            </div>
+        </section>
+		
+
+        <footer>
+          
+        </footer>
+
+        
+   
+    </div>
+    <script type="text/javascript" src="../javascripts/jquery.js"></script>
+	<script type="text/javascript" src="../javascripts/validate/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../javascripts/main.js"></script>
+	<script type="text/javascript">
+	$(function () {
+    var basePath = $("#basePath").val();
+    var list = {
+        initPage: function(){
+            this.bindEvent();
+        },
+
+        bindEvent: function(){
+        	$('#tabsUl').on('click', 'li', function(){
+				var me = $(this);
+					id = me.attr('data-for'),
+					curCode = $('#'+id);
+				curCode.show();
+				me.addClass('active').siblings().removeClass('active');
+				curCode.siblings().hide();
+			});
+
+            $('#cancleBtn').on('click', function(){
+                alert('取消');
+            });
+
+            $('#saveBtn').on('click', function(){
+                var configForm = $("#configForm");
+                if (!configForm.validate().form()) {
+                    return false;
+                }
+
+                Yt.post('save.json', configForm.serialize(), function(){
+                    Yt.tips("提交成功...");
+                    window.location.href = basePath+"/admin/core/config/list.do";
+                });
+
+            });
+        }
+    };
+
+    list.initPage();
+
+});
+	</script>
+  </body>
+</html>

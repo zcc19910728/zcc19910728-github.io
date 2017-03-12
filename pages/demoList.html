@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<!--   <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'> -->
+	<link rel="stylesheet" type="text/css" href="../stylesheets/ytcommon.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/index.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../javascripts/jquery.table/jquery.table.css" media="screen">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<title>洋驼后台列表页</title>
+</head>
+
+<body>
+<div id="container">
+	<header id="header">
+		<!--  <div class="clearfix bg-b cor-w header">
+                <h1 class="f-l fs-14 fw-b ml-20 pt-5"><img src="../images/logo.png" /></h1>
+                <ul class="f-r fs-14 pt-20 pb-20">
+                    <li class="f-l"><a class="cor-w mr-20">html</a></li>
+                    <li class="f-l"><a class="cor-w mr-20">css</a></li>
+                    <li class="f-l"><a class="cor-w  mr-20">javascript</a></li>
+                    <li class="f-l"><a class="cor-w mr-20">project</a></li>
+                </ul>
+            </div> -->
+	</header>
+
+	<section class="main-content">
+		<div class="layer-main">
+			<div class="search-wrap">
+				<div class="yt-row">
+					<div class="yt-col-4">
+						<label class="col-ms-4">配置key：</label>
+						<div class="col-ms-8">
+							<input type="text" class="ipt" name="configName" id="configName" />
+						</div>
+					</div>
+					<div class="yt-col-4">
+						<label class="col-ms-4">配置value：</label>
+						<div class="col-ms-8">
+							<input type="text" class="ipt" name="configValue" id="configValue" />
+						</div>
+					</div>
+					<div class="yt-col-4">
+						<label class="col-ms-4">配置类型：</label>
+						<div class="col-ms-8">
+							<input type="text" class="ipt" name="configType" id="configType" />
+						</div>
+					</div>
+				</div>
+				<div class="yt-row">
+					<div class="yt-col-4">
+						<label class="col-ms-4">是否私有配置：</label>
+						<div class="col-ms-8">
+							<select id="isPrivate" name="isPrivate" class="select" >
+								<option value="">请选择</option>
+								<option value="1" #if($!{configVo.isPrivate}==1) selected #end>是</option>
+								<option value="0" #if($!{configVo.isPrivate}==0) selected #end>否</option>
+							</select>
+						</div>
+					</div>
+					<div class="yt-col-8">
+						<span class="btn" id="searchBtn"><i class="icon iconfont">&#xe631;</i>查询</span>
+					</div>
+				</div>
+			</div>
+			<div class="oprs-wrap">
+				<a class="btn btn-opr" href="${base}/admin/core/config/add.do" >添加配置</a>
+				<a class="btn btn-opr" href="${base}/admin/core/config/redisKeyWord.do" >Redis关键字导入</a>
+			</div>
+			<table class="w-100 jq-table" id="listItemTable" >
+			</table>
+			<div class="oprs-wrap">
+				<div id="pagination"></div>
+			</div>
+			<div class="tabs-wrap mt-40">
+				<ul class="tabs" id="tabsUl">
+					<li class="active" data-for="htmlCodeWrap">html代码</li>
+					<li data-for="jsCodeWrap">js代码</li>
+				</ul>
+			</div>
+
+<div class="code-wrap">
+	<div class="bg-w pb-40" id="htmlCodeWrap">
+
+<xmp>
+#set($mainMenu="operation")
+#set($title="查看进度")
+#set($menu="fundSerial")
+#parse("./hipac/common/header.vm")
+<link rel="stylesheet" href="${cssPath}/lib/My97DatePicker/skin/WdatePicker.css?t=$version" type="text/css" />
+<link href="${cssPath}/lib/jquery.table/jquery.table.css?v=$version" rel="Stylesheet" type="text/css"/>
+<link href="${cssPath}/lib/select2/select2.min.css" rel="stylesheet" type="text/css" />
+<div class="main">
+	<div class="bg-e p-10 breadcrumb">
+		#genrateBreadcrumbs([{"name":"运营管理"}, {"name":"照片核销"},{"name":"查看进度"}])
+	</div>
+	<div id="mainWrap">
+		<form id="searchForm">
+			<input type="hidden" name="pageSize" id="pageSize" value="10"/>
+			<input type="hidden" name="pageNo" id="pageNo" value="1"/>
+			<div class="search-wrap">
+				<div class="yt-row">
+					<div class="yt-col-4">
+						<label class="col-ms-4">配置key：</label>
+						<div class="col-ms-8">
+							<input type="text" class="ipt" name="configName" id="configName" />
+						</div>
+					</div>
+					<div class="yt-col-4">
+						<label class="col-ms-4">配置value：</label>
+						<div class="col-ms-8">
+							<input type="text" class="ipt" name="configValue" id="configValue" />
+						</div>
+					</div>
+					<div class="yt-col-4">
+						<label class="col-ms-4">配置类型：</label>
+						<div class="col-ms-8">
+							<input type="text" class="ipt" name="configType" id="configType" />
+						</div>
+					</div>
+				</div>
+				<div class="yt-row">
+					<div class="yt-col-4">
+						<label class="col-ms-4">是否私有配置：</label>
+						<div class="col-ms-8">
+							<select id="isPrivate" name="isPrivate" class="select" >
+								<option value="">请选择</option>
+								<option value="1" #if($!{configVo.isPrivate}==1) selected #end>是</option>
+								<option value="0" #if($!{configVo.isPrivate}==0) selected #end>否</option>
+							</select>
+						</div>
+					</div>
+					<div class="yt-col-8">
+						<span class="btn" id="searchBtn"><i class="icon iconfont">&#xe631;</i>查询</span>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="oprs-wrap">
+		<a class="btn btn-opr" href="/admin/core/config/add.do" >添加配置</a>
+		<a class="btn btn-opr" href="/admin/core/config/redisKeyWord.do" >Redis关键字导入</a>
+	</div>
+
+	<table class="w-100 jq-table" id="listItemTable" >
+	</table>
+
+	<div class="oprs-wrap">
+		<div id="pagination"></div>
+	</div>
+</div>
+
+#parse("./hipac/common/footer.vm")
+<script src="${jsPath}/lib/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="${jsPath}/lib/My97DatePicker/lang/zh-cn.js" type="text/javascript"></script>
+<script src="${jsPath}/lib/jquery.table/jquery.pagination.js?v=$version" type="text/javascript" ></script>
+<script src="${jsPath}/lib/jquery.table/jquery.table.js?v=$version" type="text/javascript" ></script>
+<script src="${jsPath}/lib/select2/select2.min.js" type="text/javascript"></script>
+<script src="${jsPath}/js/manager/brandtask/brandTaskShopList.js?v=$version" type="text/javascript"></script>						
+</xmp>
+				</div>
+
+<div class="bg-w pb-40 d-n" id="jsCodeWrap">
+<xmp>
+$(function(){
+	var tableList = $("#listItemTable");
+	var list = {
+			columns: [{
+						title: '配置KEY',
+						field: 'configName',
+						width: '20%'
+					}, {
+						title: '配置Value',
+						field: 'configValue',
+						width: '30%',
+					}, {
+						title: '配置类型',
+						field: 'configType',
+						width: '25%',
+					},{
+						title: '操作',
+						field: 'itemStock',
+						width: '25%',
+						render: function (row) {
+							var operate = '<a data-id="' + row.id + '" class="J-deleteShop">删除</a>&nbsp;&nbsp;';
+							operate += '<a href="/admin/core/config/edit.do?id=' + row.id + '">修改</a>';
+							this.html(operate);
+						}
+					}],
+
+			initTable: function (curpage) {
+				curpage = curpage || 1;
+				$("#pageNo").val(curpage);
+				var that = this,
+					data=$("#searchForm").serialize();
+				
+				Yt.post("/admin/core/config/list.json", data, function (json) {
+					tableList.jtable({
+						columns: that.columns,
+						curpage: curpage,
+						source: json,
+						pageContainer: $('#pagination'),
+						pageCallback: function (pageIndex) {
+							that.initTable(pageIndex);
+						}
+					});
+				});
+			},
+
+			bindEvent: function () {
+				var that = this;
+
+				$("#searchBtn").click(function () {
+					list.initTable(1);
+				});
+			},
+
+			initPage: function(){
+				this.initTable(1);
+				this.bindEvent();
+			}
+		};
+
+	list.initPage();
+})
+</xmp>
+</div>
+</div>
+
+
+
+
+		</div>
+
+
+
+		<div class="layer-side">
+			<div class="ml-10 cor-grey6 fs-14 pt-10"><a href="demoList.html">list列表页</a></div>
+			<div class="ml-10 cor-grey6 fs-14 pt-10"><a href="demoAdd.html">新增表单页</a></div>
+			<div class="ml-10 cor-grey6 fs-14 pt-10"><a href="demoDetail.html">详情页</a></div>
+		</div>
+	</section>
+
+
+	<footer>
+
+	</footer>
+
+
+
+</div>
+<script type="text/javascript" src="../javascripts/jquery.js"></script>
+<script type="text/javascript" src="../javascripts/jquery.table/jquery.pagination.js"></script>
+<script type="text/javascript" src="../javascripts/jquery.table/jquery.table.js"></script>
+<script type="text/javascript" src="../javascripts/main.js"></script>
+<script type="text/javascript">
+	var tableList = $("#listItemTable");
+	var json = {"data":[{
+		"configName": "配置1",
+		"configValue": "配置值1",
+		"configType": "配置类型1"
+	},
+		{
+			"configName": "配置1",
+			"configValue": "配置值1",
+			"configType": "配置类型1"
+		}],
+		"totalCount":1};
+	var list = {
+		basePath: $("#basePath").val(),
+		paginationWrap: $('#pagination'),
+		columns: [{
+			title: '配置KEY',
+			field: 'configName',
+			width: '20%'
+		}, {
+			title: '配置Value',
+			field: 'configValue',
+			width: '30%',
+		}, {
+			title: '配置类型',
+			field: 'configType',
+			width: '25%',
+		},{
+			title: '操作',
+			field: 'itemStock',
+			width: '25%',
+			render: function (row) {
+				var operate = '<a href="javascript:void(0)" data-id="' + row.id + '" class="J-deleteShop">删除</a>&nbsp;&nbsp;';
+				operate = operate + '<a href="' + $("#basePath").val() + '/admin/core/config/edit.do?id=' + row.id + '">修改</a>';
+				this.html(operate);
+			}
+		}
+		],
+
+		initPage: function(){
+			this.initTable(1);
+			this.eventBind();
+		},
+
+		eventBind: function(){
+			$('#tabsUl').on('click', 'li', function(){
+				var me = $(this);
+				id = me.attr('data-for'),
+						curCode = $('#'+id);
+				curCode.show();
+				me.addClass('active').siblings().removeClass('active');
+				curCode.siblings().hide();
+			});
+		},
+
+		initTable: function (curpage) {
+			var that = this;
+			curpage = curpage || 1;
+			var configName = $("#configName").val();
+			var configValue = $("#configValue").val();
+			var configType = $("#configType").val();
+			var isPrivate = $("#isPrivate").val();
+			var data = {
+				pageNo: curpage,
+				pageSize: 10,
+				configName: configName,
+				configValue: configValue,
+				configType: configType,
+				isPrivate: isPrivate
+			};
+			//Yt.post($("#basePath").val() + "/admin/core/config/list.json", data, function (json) {
+			tableList.jtable({
+				columns: that.columns,
+				curpage: curpage,
+				source: json,
+				pageContainer: that.paginationWrap,
+				pageCallback: function (pageIndex) {
+					that.initTable(pageIndex);
+				}
+			});
+			//});
+		}
+	};
+
+	list.initPage();
+</script>
+</body>
+</html>

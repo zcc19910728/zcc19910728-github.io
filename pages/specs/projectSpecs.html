@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--   <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/common.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/index.css" media="screen">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>项目常用规范</title>
+  </head>
+
+  <body>
+    <div id="container">
+        <header id="header">
+          <!--  <div class="clearfix bg-b cor-w header">
+                <h1 class="f-l fs-14 fw-b ml-20 pt-5"><img src="../images/logo.png" /></h1>
+                <ul class="f-r fs-14 pt-20 pb-20">
+                    <li class="f-l"><a class="cor-w mr-20">html</a></li>
+                    <li class="f-l"><a class="cor-w mr-20">css</a></li>
+                    <li class="f-l"><a class="cor-w  mr-20">javascript</a></li>
+                    <li class="f-l"><a class="cor-w mr-20">project</a></li>
+                </ul>
+            </div> -->
+        </header>
+
+        <section class="main-content">
+            <div class="layer-main">
+                <div>
+                    <div class="block-head">项目路径</div>
+                    <div class="row clearfix">
+                        <div class="col w-50 f-l p-20 bs-b">
+                        <pre>
+                        <code class="language-html" data-lang="html">
+                        lib库路径前缀<span class="cor-red">(${staticPath})</span>:&lt;link href="$staticPath/lib/weixin/iscroll/scrollbar.css" rel="stylesheet" type="text/css" /&gt;</code>
+                        <code class="language-html" data-lang="html">
+                        js路径前缀<span class="cor-red">(${jsPath})</span>:&lt;script src="${jsPath}/js/data/myShopIncome.js?v=$version" type="text/javascript"&gt;&lt;/script&gt;</code>
+                        <code>
+                        css路径前缀<span class="cor-red">(${cssPath})</span>:&lt;link href="${cssPath}/css/index.css?v=$version" rel="Stylesheet" type="text/css"/&gt;</code>
+                        <code>
+                        图片路径前缀<span class="cor-red">(${imgPath})</span>:&lt;img src="${imgPath}/images/image053.png" alt=""&gt;</code>
+                        <code>
+                        其他路径前缀<span class="cor-red">(${gulpPath})</span>:</code>
+                        </pre>    
+                        </div>
+                     
+                    </div>
+                </div>
+            
+               
+
+            </div>
+
+
+
+            <div class="layer-side">
+                <div class="ml-10 cor-grey6 fs-14 pt-10">项目路径</div>
+                <a class="d-b ml-30 pt-10">输入框</a>
+                
+            </div>
+        </section>
+
+        <footer>
+          
+        </footer>
+
+        
+   
+    </div>
+    <script type="text/javascript" src="../../javascripts/jquery.js"></script>
+    <script type="text/javascript" src="../../javascripts/main.js"></script>
+  </body>
+</html>

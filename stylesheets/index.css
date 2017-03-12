@@ -1,0 +1,97 @@
+.header{
+    background:#1a182e;
+}
+.main-content{
+	font-size: 14px;
+	padding-top:60px;
+}
+
+.layer-main{
+	margin-right: 160px;
+} 
+.layer-side{
+	position: fixed;
+	top:60px;
+	bottom: 0;
+	width:160px;
+	background: #e7e7e7;
+	right: 0;
+}
+.block-head{
+	font-size:16px;
+	color:#222;
+	padding:20px;
+	background: #eee;
+}
+
+.inner-content{
+	width: 1000px;
+	margin:0 auto;
+}
+
+.mobile-bg{
+	background: url('../images/iphone-6-p.png') center top no-repeat;
+	width: 432px;
+	height: 800px;
+	padding-top: 108px;
+	padding-left: 52px;
+}
+
+
+.side-bar{
+	width:160px;
+	float: left;
+}
+.side-bar-fixed{
+	position: fixed;
+	top: 0px;
+	left: 0;
+}
+.side-bar .sub-menu{
+	padding-top: 10px;
+	margin-left: 10px;
+	font-size: 14px;
+	color: #8c8d8d;
+}
+.side-bar .active a{
+	color:red;
+}
+
+.main-container{
+	margin-left:170px;
+	margin-right:460px
+}
+
+.mobile-bar{
+	position: fixed;
+	top:60px;
+	bottom: 0;
+	width:432px
+	background: #e7e7e7;
+	right: 0;
+}
+
+pre{
+	padding: 15px;
+    margin: 15px;
+    overflow-x: auto;
+    font-size: 13px;
+    color: #777;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    white-space: pre;
+    word-wrap: normal;
+}
+code{
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    line-height: 1.8;
+}
+
+.component-title{
+	font-weight: bold;
+	font-size: 15px;
+	padding:20px;
+}

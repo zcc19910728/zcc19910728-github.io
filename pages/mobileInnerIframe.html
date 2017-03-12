@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/mallCommon.css" media="screen">
+    <script type="text/javascript" src="../javascripts/zepto.min.js"></script>
+    <script type="text/javascript" src="../javascripts/mallCommon.js"></script>
+</head>
+<style type="text/css">
+	html{width: 377px;overflow: hidden;}
+    html,body{padding:0; margin: 0;}
+    .container{ height:672px; overflow-y: auto;overflow-x: hidden;}
+    p{ margin:10px 0 0 10px;}
+</style>
+<body>
+    <div class="container bg-e" id="innerWindow">
+        <div class="p-20">
+            <div class="mt-20"><a class="button">红色基础</a></div>
+            <div class="mt-20"><a class="button button-red">红色小</a></div>
+            <div class="mt-20"><a class="button button-grey ">灰色小</a></div>
+            <div class="mt-20"><a class="button button-red-lg">红色大</a></div>
+            <div class="mt-20"><a class="button button-green-lg">绿色大</a></div>
+            <div class="mt-20"><a class="button button-grey-lg">灰色大</a></div>
+            <div class="mt-20"><a class="btn-line">红线按钮</a></div>
+            <div class="mt-20"><a class="btn-line btn-line-green">绿线按钮</a></div>
+            <div class="mt-20"><a class="btn-line btn-line-grey">灰线按钮</a></div>
+            <div class="mt-20"><a class="btn-line-lg">大红线</a></div>
+            <div class="mt-20"><a class="btn-line-lg btn-line-lg-grey">大灰线</a></div>
+        </div>
+        <div class="wx-bottom-fix">
+            <a class="btn">底部红</a>
+            <a class="btn btn-grey">底部灰</a>
+            <a class="btn btn-disabed">底部禁用</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        	$(function(){
+        		var innerWindow = $('#innerWindow');
+        		innerWindow.on('click', '#toastBtn', function(){
+        			Yt.toast('普通提示框', 3000, function(){
+        				$('#tips').text('普通提示框');
+        			});
+        		});
+
+        		innerWindow.on('click', '#alertBtn',function(){
+        			Yt.alert('我是alert提示框', function(){
+        				$('#tips').text('alert提示框');
+        			});
+        		});
+
+        		innerWindow.on('click', '#confirmBtn',function(){
+        			Yt.confirm('我是confirm提示框', function(){
+        				$('#tips').text('confirm提示框');
+        				Yt.dialogClose("ytDialog");
+        			});
+        		});
+
+        		innerWindow.on('click', '#submitOrder',function(){
+        			if(!$('#addOrderForm').validateForm()){
+        				return false;
+        			}
+                });
+
+                // 搜索框交互
+
+				// 搜索框事件
+				innerWindow.on("click",'.J-search-ipt',function(){
+					if(!innerWindow.data('isSearch')){
+						innerWindow.data('isSearch', true);
+						innerWindow.find('.search-inner').addClass('search-active');
+						innerWindow.find('.clear-icon').show();
+						$('#keywordLayer').show();
+					}
+				});
+
+				// 取消搜索
+				innerWindow.on('click','.back-icon',function(){
+					innerWindow.data('isSearch', false);
+					innerWindow.find('.search-inner').removeClass('search-active');
+					innerWindow.find('.clear-icon').hide();
+					$('#keywordLayer').hide();
+					innerWindow.find('.J-search-ipt').val('');
+				});
+
+				innerWindow.find('.search-icon').on('click', function(){
+					innerWindow.find('.search-btn').trigger("click");
+				});
+				innerWindow.find(".clear-icon").on("click",function(){
+					innerWindow.find('.J-search-ipt').val("");
+				});
+				
+		
+        	});
+        </script>
+</body>
+</html>
